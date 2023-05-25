@@ -1,14 +1,14 @@
 <?php
-require "backEnd_yamalon_kecil.php";
+require "backEnd.php";
 if (!isset($_GET["id"])) {
-  header("location: barang.php");
+  header("location: yamalonKecil.php");
 }
 $id = $_GET['id'];
 
 if (hapusBarang($id) > 0) {
   echo "<script>
             alert('data berhasil dihapus');
-            document.location.href = 'barang.php';
+            document.location.href = 'yamalonKecil.php';
           </script>";
 } else
   echo " gagal nambah";
@@ -27,7 +27,7 @@ if (hapusBarang($id) > 0) {
 </head>
 
 <body>
-  <a href="barang.php">Tampil Barang</a>
+  <a href="yamalonKecil.php">Tampil Barang</a>
 </body>
 
 </html>

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <a href="barang.php">Jenis Barang</a>
+  <a href="bBarang/b1YamalonKecil/yamalonKecil.php">Jenis Barang</a>
   <a href="warnaBarang.php">Barang Warna</a>
   <a href="aktifitasbarang.php">Keluar Masuk Barang</a>
   <a href="hargaPokokBarang.php">Harga Pokok Barang</a>

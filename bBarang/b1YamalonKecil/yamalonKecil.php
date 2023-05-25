@@ -1,5 +1,5 @@
  <?php
-  require "backEnd_yamalon_kecil.php";
+  require "backEnd.php";
   $ambilDataBarang = keranjangData("SELECT *  FROM benang_yamalon_kecil");
   if (isset($_POST['cari'])) {
 
@@ -48,7 +48,7 @@
       ?>
        <tr>
          <td><?= $i++; ?></td>
-         <td><?= $dataBarang["nama_nomor"]; ?></td>
+         <td><?= $dataBarang["nomor"]; ?></td>
          <td><a href="barangUpdate.php?id=<?= $dataBarang["id"]; ?>">Update </a> |
            <a href="barangDelete.php?id=<?= $dataBarang["id"]; ?>" onclick="return confirm ('Apakah anda yakin ?'); ">Delete </a>
          </td>

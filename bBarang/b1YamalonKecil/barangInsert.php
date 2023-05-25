@@ -10,13 +10,13 @@
   <title>Tambah Barang</title>
 </head>
 <?php
-require "backEnd_yamalon_kecil.php";
+require "backEnd.php";
 
 if (isset($_POST['tambah'])) {
   if (tambahBarang($_POST) > 0) {
     echo "<script>
             alert('data berhasil disimpan');
-            document.location.href = 'barang.php';
+            document.location.href = 'yamalonKecil.php';
           </script>";
   } else
     echo " gagal nambah";
@@ -36,7 +36,7 @@ if (isset($_POST['tambah'])) {
     </ul>
     <li><button type="submit" name="tambah">Tambah Barang</button></li>
   </form>
-  <a href="barang.php">Tampil Barang</a>
+  <a href="yamalonKecil.php">Tampil Barang</a>
 </body>
 
 </html>

@@ -10,9 +10,9 @@
   <title>Update Barang</title>
 </head>
 <?php
-require "backEnd_yamalon_kecil.php";
+require "backEnd.php";
 if (!isset($_GET["id"])) {
-  header("location: barang.php");
+  header("location: yamalonKecil.php");
 }
 $id = $_GET['id'];
 $ambilDataBarang = keranjangData("SELECT *  FROM benang_yamalon_kecil WHERE id = $id");
@@ -21,7 +21,7 @@ if (isset($_POST['update'])) {
   if (updateBarang($_POST) > 0) {
     echo "<script>
             alert('data berhasil diupdate');
-            document.location.href = 'barang.php';
+            document.location.href = 'yamalonKecil.php';
           </script>";
   } else
     echo " gagal update";
@@ -36,13 +36,13 @@ if (isset($_POST['update'])) {
         <label>
           Nama Barang :
           <input hidden type"text" name="id" value="<?= $dataBarang["id"]; ?>" required>
-          <input type"text" name="nama" value="<?= $dataBarang["nama_nomor"]; ?>" required>
+          <input type"text" name="nama" value="<?= $dataBarang["nomor"]; ?>" required>
         </label>
       </li>
     </ul>
     <li><button type="submit" name="update">Update Barang</button></li>
   </form>
-  <a href="barang.php">Tampil Barang</a>
+  <a href="yamalonKecil.php">Tampil Barang</a>
 </body>
 
 </html>

@@ -35,13 +35,13 @@ function tambahBarang($tambahDataBarang)
   $ambilIdUnikBarang = keranjangData("SELECT *  FROM benang_yamalon_kecil ORDER BY id DESC LIMIT 1");
   foreach ($ambilIdUnikBarang as $idUnikB);
 
-  $nama = htmlspecialchars($tambahDataBarang['nama']);
-  $tstok = 0;
-
+  $nomor = htmlspecialchars($tambahDataBarang['nama']);
+  $nama = '';
+  
   $tambahDataSimpanBarang = " INSERT INTO 
                           benang_yamalon_kecil
                         VALUE 
-  (null, '$nama') ";
+  (null, '$nomor', '$nama') ";
   mysqli_query($koneksi, $tambahDataSimpanBarang);
   echo mysqli_error($koneksi);
   return mysqli_affected_rows($koneksi);
@@ -56,7 +56,7 @@ function updateBarang($tambahDataBarang)
 
   $tambahDataUpdateBarang = " UPDATE benang_yamalon_kecil
    SET
-   nama_nomor = '$nama' WHERE id = $id ";
+   nomor = '$nama' WHERE id = $id ";
 
   mysqli_query($koneksi, $tambahDataUpdateBarang);
   echo mysqli_error($koneksi);
@@ -77,7 +77,7 @@ function cari($dataBarang)
 {
   $koneksi = koneksi2();
   $keranjangBarang = "SELECT * FROM benang_yamalon_kecil
-  WHERE nama_nomor LIKE '%$dataBarang%'";
+  WHERE nomor LIKE '%$dataBarang%'";
 
   $ambilData = mysqli_query($koneksi, $keranjangBarang);
   $dataX = [];
