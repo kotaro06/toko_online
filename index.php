@@ -9,9 +9,10 @@
 </head>
 
 <body>
-  <a href="bBarang/b1YamalonKecil/yamalonKecil.php">Jenis Barang</a>
-  <a href="aSupplier/index.php">Supplier</a>
-  <a href="aktifitasbarang.php">Keluar Masuk Barang</a>
+  <a href="bBarang/b1YamalonKecil/yamalonKecil.php">Jenis Barang</a><br>
+  <a href="bBarang/b1YamalonKecil/yamalonKecil.php">Nomor Warna</a><br>
+  <a href="aSupplier/index.php">Supplier</a><br>
+  <a href="aktifitasbarang.php">Keluar Masuk Barang</a><br>
   <a href="hargaPokokBarang.php">Harga Pokok Barang</a>
 </body>
 
