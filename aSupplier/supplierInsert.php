@@ -52,7 +52,7 @@ if (isset($_POST['tambah'])) {
     </ul>
     <li><button type="submit" name="tambah">Tambah Supplier</button></li>
   </form>
-  <a href="index.php">Tampil Supplier</a>
+
 </body>
 
 </html>

@@ -69,6 +69,7 @@ if (isset($_POST['cari'])) {
     <?php } ?>
   </table>
 
-</body>
+</body> <br>
+<a href="../index.php">index</a>
 
 </html>
