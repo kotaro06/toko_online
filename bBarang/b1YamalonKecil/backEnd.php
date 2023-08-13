@@ -33,11 +33,12 @@ function tambahBarang($tambahDataBarang)
   //var_dump($tambahData);
   $koneksi = koneksi2(); //contoh ambil koneksi 2
   $ambilIdUnikBarang = keranjangData("SELECT *  FROM benang_yamalon_kecil ORDER BY id DESC LIMIT 1");
-  foreach ($ambilIdUnikBarang as $idUnikB);
+  foreach ($ambilIdUnikBarang as $idUnikB)
+    ;
 
   $nomor = htmlspecialchars($tambahDataBarang['nama']);
   $nama = '';
-  
+
   $tambahDataSimpanBarang = " INSERT INTO 
                           benang_yamalon_kecil
                         VALUE 
