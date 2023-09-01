@@ -30,6 +30,7 @@ if (isset($_POST['cari'])) {
 
     <tr>
       <th>id</th>
+      <th>gambar</th>
       <th>Nama Barang</th>
       <th>Action</th>
     </tr>
@@ -49,6 +50,11 @@ if (isset($_POST['cari'])) {
       <tr>
         <td>
           <?= $i++; ?>
+        </td>
+        <td>
+          <a href="www.google.com" />
+          <img src="../../gambar/<?= $dataBarang["gambar"]; ?>" width="25 pixel" />
+
         </td>
         <td>
           <?= $dataBarang["nama"]; ?>

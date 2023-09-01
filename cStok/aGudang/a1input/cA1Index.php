@@ -1,10 +1,22 @@
 <?php
 require "cA1BackEnd.php";
-$ambilDataBarang = keranjangData("SELECT *  FROM c1astokin");
-if (isset($_POST['cari'])) {
 
-  $ambilDataBarang = cari($_POST['keyword']);
+$jmlhData = 5;
+$koneksi = koneksi2();
+$ambilIdUnikBarang = mysqli_query($koneksi, "SELECT *  FROM c1astokin");
+$totalData = mysqli_num_rows($ambilIdUnikBarang);
+$jmlhPage = ceil($totalData / $jmlhData);
+
+
+//echo $jmlhData . "<br>" . $totalData . "<br>" . $jmlhPage;
+if (isset($_GET['halaman'])) {
+  $halamanAktif = $_GET['halaman'];
+} else {
+  $halamanAktif = 1;
 }
+$dataAwal = ($halamanAktif * $jmlhData) - $jmlhData;
+$ambilDataBarang = keranjangData("SELECT *  FROM c1astokin LIMIT $dataAwal,$jmlhData");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,11 +37,23 @@ if (isset($_POST['cari'])) {
     <input type="text" name="keyword" size="25" autofocus placeholder="masukkan keyword pencarian">
     <button type="submit" name="cari">Pencarian</button>
   </form>
-  <br><br>
+  <br>
+  <?php
+  for ($i = 1; $i <= $jmlhPage; $i++): ?>
+
+    <a href="?halaman=<?php echo $i ?>"> <?php echo $i ?></a>
+
+
+    <?php
+  endfor;
+  ?>
+  <br>
+
   <table border="1" cellpadding="10" cellspacing="0">
 
     <tr>
       <th>id</th>
+
       <th>Nama Produk</th>
       <th>Warna</th>
       <th>Stock</th>
@@ -37,7 +61,9 @@ if (isset($_POST['cari'])) {
       <th>Action</th>
     </tr>
 
-    <?php if (empty($ambilDataBarang)): ?>
+    <?php
+
+    if (empty($ambilDataBarang)): ?>
       <tr>
         <td colspan="6">
           <p> Data Barang Tidak ditemukan</p>

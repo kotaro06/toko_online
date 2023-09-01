@@ -31,17 +31,26 @@ if (isset($_POST['update'])) {
 
 <body>
   <h3> Form Update Data Barang</h3>
-  <form action=" " method="POST">
+  <form action=" " method="POST" enctype="multipart/form-data">
     <ul>
+
       <li>
         <label>
           Nama Barang :
-          <input hidden type"text" name="id" value="<?= $dataBarang["id"]; ?>" required>
+          <input hidden type" text" name="id" value="<?= $dataBarang["id"]; ?>">
           <input type"text" name="nama" value="<?= $dataBarang["nama"]; ?>" required>
         </label>
       </li>
+      <li>
+        <label>
+
+          Gambar Barang :
+          <input type="file" name="gambar" ">
+        </label>
+      </li>
     </ul>
-    <li><button type="submit" name="update">Update Barang</button></li>
+    <li><button type=" submit" name="update">Update Barang</button>
+      </li>
   </form>
   <a href="b2jenisbarang.php">Tampil Barang</a>
 </body>

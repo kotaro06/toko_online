@@ -18,7 +18,7 @@ $ambilData2 = keranjangData("SELECT *  FROM b4satuan");
 if (isset($_POST['tambah'])) {
   if (tambahBarang($_POST) > 0) {
     echo "<script>
-            alert('data berhasil disimpan');
+            
             document.location.href = 'cA1Insert.php';
           </script>";
   } else

@@ -25,7 +25,7 @@ if (isset($_POST['tambah'])) {
 
 <body>
   <h3> Form Tambah Data Barang</h3>
-  <form action=" " method="POST">
+  <form action=" " method="POST" enctype="multipart/form-data">
     <ul>
       <li>
         <label>
@@ -33,8 +33,15 @@ if (isset($_POST['tambah'])) {
           <input type"text" name="nama" autofocus required>
         </label>
       </li>
+      <li>
+        <label>
+          Gambar Barang :
+          <input type="file" name="gambar" ">
+        </label>
+      </li>
     </ul>
-    <li><button type="submit" name="tambah">Tambah Barang</button></li>
+    <li><button type=" submit" name="tambah">Tambah Barang</button>
+      </li>
   </form>
   <a href="b2jenisbarang.php">Tampil Barang</a>
 </body>
