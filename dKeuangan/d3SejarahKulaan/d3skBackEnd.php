@@ -32,6 +32,11 @@ function tambahData($tambahData)
   //var_dump($tambahData);
   $koneksi = koneksi2(); //contoh ambil koneksi 2
 
+  $folder = '../../gambar/notaKulaan/';
+  $n_g = $_FILES['gambar']['name'];
+  $sumber_F = $_FILES['gambar']['tmp_name'];
+  move_uploaded_file($sumber_F, $folder . $n_g);
+
   $nama = $tambahData['barang'];
   $warna = $tambahData['warna'];
   $supplier = $tambahData['supplier'];
@@ -43,7 +48,7 @@ function tambahData($tambahData)
   $tambahDataSimpan = " INSERT INTO 
                          d3sejarah_kulaan
                         VALUE 
-  (null,'$nama','$warna','$supplier','$stock','$satuan','$harga','$tgl') ";
+  (null,'$nama','$warna','$supplier','$stock','$satuan','$harga','$tgl','$n_g') ";
   mysqli_query($koneksi, $tambahDataSimpan);
   echo mysqli_error($koneksi);
   return mysqli_affected_rows($koneksi);
@@ -53,6 +58,12 @@ function updateSatuan($tambahData)
 {
   //var_dump($tambahData);
   $koneksi = koneksi2(); //contoh ambil koneksi 2
+
+  $folder = '../../gambar/notaKulaan/';
+  $n_g = $_FILES['gambar']['name'];
+  $sumber_F = $_FILES['gambar']['tmp_name'];
+  move_uploaded_file($sumber_F, $folder . $n_g);
+
   $id = $tambahData['id'];
   $nama = $tambahData['barang'];
   $warna = $tambahData['warna'];
@@ -64,6 +75,7 @@ function updateSatuan($tambahData)
 
   $tambahDataUpdateSatuan = " UPDATE d3sejarah_kulaan
    SET
+   gambar = '$n_g',
    nama = '$nama',
    warna = '$warna',
    supplier = '$supplier',

@@ -37,7 +37,7 @@ if (isset($_POST['update'])) {
 
 <body>
   <h3> Form Update Data Sejarah Kulaan</h3>
-  <form action=" " method="POST">
+  <form action=" " method="POST" enctype="multipart/form-data">
     <ul>
       <li>
         <label>
@@ -48,27 +48,33 @@ if (isset($_POST['update'])) {
       </li>
       <li>
         <label>
+          Gambar Barang :
+          <input type="file" name="gambar" ">
+        </label>
+      </li>
+      <li>
+        <label>
           Barang :
-          <select name="barang">
-            <?php
-            $barang = $dataKonversi["nama"];
-            $ambilData1a = keranjangData("SELECT *  FROM b2jenis_barang WHERE id = $barang ");
-            foreach ($ambilData1a as $dataB) {
-              echo "<option value=", $dataB['id'], ">", $dataB['nama'], "</+option>";
+          <select name=" barang">
+          <?php
+          $barang = $dataKonversi["nama"];
+          $ambilData1a = keranjangData("SELECT *  FROM b2jenis_barang WHERE id = $barang ");
+          foreach ($ambilData1a as $dataB) {
+            echo "<option value=", $dataB['id'], ">", $dataB['nama'], "</+option>";
 
-              foreach ($ambilData1 as $dataB1) {
+            foreach ($ambilData1 as $dataB1) {
 
-                if ($barang == $dataB1['id']) {
-                } else {
-                  echo "<option value=", $dataB1['id'], ">", $dataB1['nama'],
-                    "</option>";
-
-                }
+              if ($barang == $dataB1['id']) {
+              } else {
+                echo "<option value=", $dataB1['id'], ">", $dataB1['nama'],
+                  "</option>";
 
               }
-            }
 
-            ?>
+            }
+          }
+
+          ?>
           </select>
         </label>
       </li>

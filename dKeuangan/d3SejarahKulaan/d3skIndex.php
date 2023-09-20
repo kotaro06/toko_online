@@ -27,6 +27,7 @@ if (isset($_POST['konversi'])) {
 
     <tr>
       <th>id</th>
+      <th>Gambar</th>
       <th>Tanggal</th>
       <th>Nama Produk</th>
       <th>Warna</th>
@@ -52,6 +53,9 @@ if (isset($_POST['konversi'])) {
       <tr>
         <td>
           <?= $i++; ?>
+        </td>
+        <td>
+          <img src="../../gambar/notaKulaan/<?= $dataKonversi["gambar"]; ?>" width="25 pixel" />
         </td>
         <td>
           <?= $dataKonversi["tgl"]; ?>

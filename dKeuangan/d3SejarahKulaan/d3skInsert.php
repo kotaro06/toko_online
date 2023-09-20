@@ -30,7 +30,7 @@ if (isset($_POST['tambah'])) {
 
 <body>
   <h3> Form Tambah Sejarah</h3>
-  <form action=" " method="POST">
+  <form action=" " method="POST" enctype="multipart/form-data">
     <ul>
       <li>
         <label>
@@ -40,12 +40,18 @@ if (isset($_POST['tambah'])) {
       </li>
       <li>
         <label>
+          Gambar Barang :
+          <input type="file" name="gambar" ">
+        </label>
+      </li>
+      <li>
+        <label>
           Barang :
-          <select name="barang">
-            <?php
-            foreach ($ambilData as $dataB) {
-              echo "<option value=", $dataB['id'], ">", $dataB['nama'], "</+option>";
-            } ?>
+          <select name=" barang">
+          <?php
+          foreach ($ambilData as $dataB) {
+            echo "<option value=", $dataB['id'], ">", $dataB['nama'], "</+option>";
+          } ?>
           </select>
         </label>
       </li>
